@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Firebase</string>
+    <string name="masukan_nama">Masukan Nama</string>
+    <string name="jurusan">Jurusan</string>
+    <string name="nim">NIM</string>
+    <string name="nama">Nama</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="save">Simpan</string>
+    <string name="lihat_data">Lihat Data</string>
+    <string name="nim_baru">NIM Baru</string>
+    <string name="nama_baru">Nama Baru</string>
+    <string name="jurusan_baru">Jurusan Baru</string>
+    <string name="update">Update</string>
+</resources>
