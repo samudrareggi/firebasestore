@@ -2,6 +2,7 @@ package com.reggi.firebase.ui;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +38,20 @@ public class UpdateData extends AppCompatActivity {
         //Mendapatkan Instance autentikasi dan Referensi dari Database
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance().getReference();
-        getData();
+//        getData();
+        Log.e("NIM ", "getData: "+ this.getIntent().getExtras().getString("dataNIM"));
+        final Bundle Maha = getIntent().getBundleExtra("Mhs");
+        final String getNIM = Maha.getString("dataNIM");
+        final String getNama = Maha.getString("dataNama");
+        final String getJurusan = Maha.getString("dataJurusan");
+        if(getNIM == null){
+            Toast.makeText(this, "DATA NIM KOSNG!", Toast.LENGTH_SHORT).show();
+        }
+        nimBaru.setText(getNIM);
+        namaBaru.setText(getNama);
+        jurusanBaru.setText(getJurusan);
+
+
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,9 +83,13 @@ public class UpdateData extends AppCompatActivity {
 
     //Menampilkan data yang akan di update
     private void getData(){
+        Log.e("NIM ", "getData: "+ getIntent().getExtras());
         final String getNIM = getIntent().getExtras().getString("dataNIM");
         final String getNama = getIntent().getExtras().getString("dataNama");
         final String getJurusan = getIntent().getExtras().getString("dataJurusan");
+        if(getNIM == null){
+            Toast.makeText(this, "DATA NIM KOSNG!", Toast.LENGTH_SHORT).show();
+        }
         nimBaru.setText(getNIM);
         namaBaru.setText(getNama);
         jurusanBaru.setText(getJurusan);
@@ -80,7 +98,7 @@ public class UpdateData extends AppCompatActivity {
     //Proses update data yang sudah ditentukan
     private void updateMahasiswa(Mahasiswa mahasiswa){
         String userID = auth.getUid();
-        String getKey = getIntent().getExtras().getString("getPrimaryKey");
+        String getKey = getIntent().getBundleExtra("Mhs").getString("getPrimaryKey");
         assert userID != null;
         assert getKey != null;
 

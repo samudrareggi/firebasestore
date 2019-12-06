@@ -84,6 +84,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //Tampilan user interface setelah terautentukasi
     private void updateUI(){
+        btLogout.setVisibility(View.VISIBLE);
+        btSave.setVisibility(View.VISIBLE);
+        btShowdata.setVisibility(View.VISIBLE);
+        etJurusan.setVisibility(View.VISIBLE);
+        etNim.setVisibility(View.VISIBLE);
+        etNama.setVisibility(View.VISIBLE);
         btLogout.setEnabled(true);
         btSave.setEnabled(true);
         btShowdata.setEnabled(true);
@@ -92,6 +98,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etJurusan.setEnabled(true);
         btLogin.setEnabled(false);
         pbLoading.setVisibility(View.GONE);
+        btLogin.setVisibility(View.GONE);
+
     }
 
     //Memeriksa apakah ada data yang kosong
@@ -125,10 +133,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Statement program untuk login
                 startActivityForResult(AuthUI.getInstance()
                                 .createSignInIntentBuilder()
-                //Memilih method yg digunakan
-                        .setAvailableProviders(Collections.singletonList(new AuthUI.IdpConfig.GoogleBuilder().build()))
-                        .setIsSmartLockEnabled(false)
-                        .build(),
+                                //Memilih method yg digunakan
+                                .setAvailableProviders(Collections.singletonList(new AuthUI.IdpConfig.GoogleBuilder().build()))
+                                .setIsSmartLockEnabled(false)
+                                .build(),
                         RC_SIGNIN);
                 pbLoading.setVisibility(View.VISIBLE);
                 break;

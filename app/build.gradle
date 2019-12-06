@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.reggi.firebase"
-        minSdkVersion 22
-        targetSdkVersion 28
+        minSdkVersion 21
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -20,18 +20,65 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.google.firebase:firebase-core:16.0.1'
-    implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
-    implementation 'com.google.firebase:firebase-database:16.0.1'
-    implementation 'com.google.firebase:firebase-auth:16.0.2'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation 'com.google.firebase:firebase-analytics:16.0.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+//    implementation 'androidx.recylerview:recyelerview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'androidx.room:room-runtime:2.2.2'
+    annotationProcessor "androidx.room:room-compiler:2.2.2"
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+//    androidTestImplementation 'androidx.test.expresso:expresso-core:3.2.0'
+
+    def recylerview_version = "1.1.0"
+    implementation "androidx.recyclerview:recyclerview:$recylerview_version"
+//    Untuk kontrol pada item yang dipilih
+//    implementation "androidx.recyclerview:recyclerview-selection:$recylerview_version"
+
+//    implementation 'com.google.firebase:firebase-core:17.2.1'
+//    implementation 'com.google.firebase:firebase-firestore:21.3.0'
+//    implementation 'com.google.firebase:firebase-database:19.2.0'
+//    implementation 'com.google.firebase:firebase-auth:19.1.0'
+//    implementation 'com.google.firebase:firebase-messaging:20.0.1'
+//    implementation 'com.google.firebase:firebase-storage:19.1.0'
+//    implementation 'com.google.firebase:firebase-dynamic-links:19.0.0'
+//    implementation 'com.firebaseui:firebase-ui-storage:3.3.1'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+//    implementation 'ore.greenroot:eventbus:3.1.1'
+
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.android.libraries.places:places:2.1.0'
+
+//    Circle ImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
+//    implementation 'com.google.maps.android:android-maps-utils:0.6.2'
+
+//    apply plugin: 'com.google.gms.google-services'
+
+    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.firebaseui:firebase-ui-auth:3.2.2'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-database:19.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
 apply plugin: 'com.google.gms.google-services'

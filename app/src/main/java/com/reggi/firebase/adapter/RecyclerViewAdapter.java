@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.reggi.firebase.R;
@@ -101,8 +103,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                                 bundle.putString("dataNama", listMahasiswa.get(position).getNamaLengkap());
                                 bundle.putString("dataJurusan", listMahasiswa.get(position).getJurusan());
                                 bundle.putString("getPrimaryKey", listMahasiswa.get(position).getKey());
+                                Toast.makeText(mContext, listMahasiswa.get(position).getNim(), Toast.LENGTH_SHORT).show();
+
                                 Intent intent = new Intent(view.getContext(), UpdateData.class);
-                                intent.putExtra("", bundle);
+                                intent.putExtra("Mhs", bundle);
                                 mContext.startActivity(intent);
                                 break;
                             case 1:

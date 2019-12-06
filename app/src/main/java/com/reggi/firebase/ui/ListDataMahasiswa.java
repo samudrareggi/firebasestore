@@ -2,6 +2,7 @@ package com.reggi.firebase.ui;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -84,7 +85,7 @@ public class ListDataMahasiswa extends AppCompatActivity implements RecyclerView
                         Toast.makeText(getApplicationContext(),"Data Gagal Dimuat", Toast.LENGTH_SHORT).show();
                         Log.e("ListDataMahasiswa", databaseError.getDetails()+" "+databaseError.getMessage());
                     }
-        });
+                });
     }
 
     //Pengaturan RecyclerView
